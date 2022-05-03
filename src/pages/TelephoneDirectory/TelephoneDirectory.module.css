@@ -1,0 +1,13 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    color: rgb(78, 78, 78);
+    padding-right: 65px;
+    padding-left: 65px;
+}
+
+table.iksweb{text-decoration: none;border-collapse:collapse;width:100%;text-align:center;background-color: white; width: 60vh}
+table.iksweb th{font-weight:500;font-size:14px; color:#6b6b6b;background-color:#d5d5d5;}
+table.iksweb td{font-size:13px;color:#6b6b6b;}
+table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:10px 10px;line-height:13px;vertical-align: middle;border: 1px solid #bfbfbf;}	table.iksweb tr:hover{background-color:#f3f3f3}
+table.iksweb tr:hover td{cursor:pointer;}

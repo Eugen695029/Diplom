@@ -1,0 +1,24 @@
+.myButton{
+    border-style: none;
+    height: 42px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    padding: 11px 18px;
+
+    color: #FFFFFF;
+    background: #896ff0;
+    border-color:rgb(0, 0, 0);
+    border-radius: 5px;
+
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-size: 100%;
+}
+.myButton:hover{
+    background: #896ff0;
+    border-color: #896ff0;
+    box-shadow:0 0 0 0 #896ff0, 0 0 9px 5px #896ff0;
+    cursor: pointer;
+    background-size: 100%;
+} 

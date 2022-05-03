@@ -1,0 +1,63 @@
+{
+  "name": "groom",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@prisma/client": "^3.11.1",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "freeice": "^2.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.3",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "prisma": "^3.11.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "react-scroll-to-bottom": "^4.2.0",
+    "react-video-js-player": "^1.1.1",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1",
+    "uuid": "^8.3.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start:dev-server": "npx nodemon server.js",
+    "start:dev": "react-scripts start",
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

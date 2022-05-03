@@ -1,0 +1,47 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(47,47,47,80%);
+    height: 133vh;
+}
+
+.settingContainer{
+    display: flex;
+    
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+    margin-top: auto;
+}
+
+.bgContainer{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item1, .item2, .item3, .item4{
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+}
+
+.item1{
+    background-image: url('../../img/bg8.jpg');
+    background-size: 140%;
+}
+
+.item2{
+    background-image: url('../../img/bg5.jpg');
+    background-size: 140%;
+}
+
+.item3{
+    background-image: url('../../img/bg4.jpg');
+    background-size: 140%;
+}
+
+.item4{
+    background-image: url('../../img/bg1.jpg');
+    background-size: 140%;
+}

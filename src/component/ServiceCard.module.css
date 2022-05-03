@@ -1,0 +1,51 @@
+.mainContainer{
+    background-color: rgb(72, 72, 72);
+    width: 333px;
+    height: 243px;
+    margin-top: 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.container1{
+    width: 184px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title h1, .text p{
+    color: white;
+    margin:0px;
+}
+
+.title h1{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.text p{
+    font-size: 20px;
+}
+
+.title{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.text{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.container2{
+    width: 149px;
+    height: 100%;
+    background-color: rgb(47, 47, 47);
+    text-align: center;
+}
+
+.container2 img{
+    margin-top: 35%;
+}

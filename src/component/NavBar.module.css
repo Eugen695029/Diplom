@@ -1,0 +1,121 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 130vh;
+    padding: 10px;
+    background: #2F2F2F;
+    box-shadow: 5px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.menuButton{
+    background: #484848;
+    border-style: none;
+    width: 40px;
+    height: 40px;
+    
+    color: white;
+    font-size: 24px;
+
+    border-radius: 4px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.logInContainer, .settingContainer{
+    width: 315px;
+}
+
+.logInContainer h1, .settingContainer h1{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.inputContainer, .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px 0 20px;
+}
+
+.myInput, .myInput2, .myInput3{
+    margin-top: 20px;
+    background-color:#f5f6f7;
+    border: 1px solid #e8e9e9;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    height: 41px;
+    padding: 11px 10px;
+    text-align: start;
+    font-size: 15px;
+    color:#555555;
+}
+
+.myInput2, .myInput3{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.myInput3{
+  
+}
+
+.buttonContainer{
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.item, .item2{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+}
+
+.item2{
+    cursor: initial;
+}
+
+.imgContainer, .imgContainer2, .imgContainer3{
+    background-color: #484848;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    margin: auto 0 auto 0;
+}
+
+.imgContainer2{
+    background-image: url('../img/settings.png');
+    background-size: 100%;
+}
+
+.imgContainer3{
+    background-image: url('../img/falling-star.png');
+    background-size: 100%;  
+}
+
+.textContainer{
+    width: 70%;
+    display: flex;
+    justify-content: start;
+}
+
+.imgContainer p{
+    font-size: 24px;
+    margin: auto;
+    text-align: center;
+}
+
+.settingButtonContainer{
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+}

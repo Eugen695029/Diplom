@@ -1,0 +1,22 @@
+.navBt{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2px;
+    margin-left: 2px;
+    background: #ffffff00;
+    border-style: none;
+    color:#ffffffff;
+    font-size: 15px;
+    
+    border-radius: 5px;  
+
+    padding: 10px;
+
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    
+}
+.navBt:hover{
+    background: #94949428; 
+    cursor: pointer;
+}
