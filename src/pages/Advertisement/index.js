@@ -28,6 +28,7 @@ function Advertisement() {
     };
 
 
+    if(localStorage.token){
     return (
         <div className={classes.mainContainer}>
             <div className={classes.textContainer}>
@@ -47,6 +48,18 @@ function Advertisement() {
             </div>
         </div>
     );
+    }
+    else{
+      return (
+        <div className={classes.container}>
+              <div className={classes.box}>
+                  <h1>
+                    Пожалуйста авторизуйтесь
+                  </h1>
+              </div>
+        </div>
+      );
+    }
 }
 
 export default Advertisement;

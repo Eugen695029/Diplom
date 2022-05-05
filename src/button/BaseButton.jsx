@@ -19,11 +19,16 @@ export default function BaseButton(props) {
             case 'reg':
                 f();
                 break;
+            case 'aut':
+                f();
+                window.location.reload();
+                break;
             case 'conductor':
                 navigate(props.goTo);
                 break;
             case 'exit':
                 f();
+                window.location.reload();
                 localStorage.clear();
                 break;
         }

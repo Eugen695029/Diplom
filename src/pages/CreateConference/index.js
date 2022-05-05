@@ -27,6 +27,17 @@ export default function Conference() {
                     <div className={classes.boxItem}>
                         <BaseButton goTo={"/room/" + v4()} text="Создать" w="100%" color="#06b06d" type="conductor"/>
                     </div>
+
+                <h1>Публичные комнаты</h1>
+
+                <ul>
+                    {rooms.map(roomID => (
+                        <li key={roomID} style={{ color: "#fff", margin: "5%" }}>
+                            {roomID}
+                            <BaseButton goTo={`/room/${roomID}`} marginLeft="5%" color="#06b06d" text="ВОЙТИ" type="conductor"/>
+                        </li>
+                    ))}
+                </ul>
                 </div>
             </div>
         );

@@ -20,6 +20,7 @@ import BaseButon from '../../button/BaseButton.jsx';
     }
 
   const user = userMas.map((obj) => {return [<tr key={v4()}><td key={v4()}>{obj.firstName}</td><td key={v4()}>{obj.name}</td><td key={v4()}>{obj.midleName}</td><td key={v4()}>{obj.phone}</td>{localStorage.role == 1 ? <td><BaseButon f={() => DeliteUser(obj.id)} type={'reg'} w={'45px'} h={'45px'} text={'X'}/></td> : <div></div> }</tr>]});
+  if(localStorage.token){
   return(
     <div className={classes.mainContainer}>
 
@@ -32,4 +33,16 @@ import BaseButon from '../../button/BaseButton.jsx';
 
     </div>
   );
+  }
+  else{
+    return (
+      <div className={classes.container}>
+            <div className={classes.box}>
+                <h1>
+                  Пожалуйста авторизуйтесь
+                </h1>
+            </div>
+      </div>
+    );
+  }
 }

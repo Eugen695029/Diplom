@@ -8,9 +8,10 @@ function Index(props) {
         .catch((e) => {
             alert(e.message)
         });
-        alert('Фон рабочего стола был изменён, обновите страницу для его отображения');
+        window.location.reload();
     };
 
+    if(localStorage.token){
     return (
         <div className={classes.mainContainer}>
             <div className={classes.settingContainer}>
@@ -23,6 +24,18 @@ function Index(props) {
             </div>
         </div>
     );
+    }
+    else{
+        return (
+            <div className={classes.container}>
+                  <div className={classes.box}>
+                      <h1>
+                        Пожалуйста авторизуйтесь
+                      </h1>
+                  </div>
+            </div>
+          );
+    }
 }
 
 export default Index;

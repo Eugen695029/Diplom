@@ -30,6 +30,7 @@ function SetingUser(props) {
         axios.post(`http://localhost:3001/update?login=${localStorage.login}&firstName=${update.firstName}&name=${update.name}&midleName=${update.midleName}&phone=${update.phone}&date=${update.date}`).then().catch((e) => {
             alert(e.message)
         })
+        alert("Выши данные обновлены");
     };
     return (
            <div className={classes.settingContainer}>
@@ -53,7 +54,7 @@ function SetingUser(props) {
                    </div>
                    <div className={classes.item2}>
                        <div className={classes.textContainer}>
-                           <p>Company: </p>
+                           <p>Компания: </p>
                        </div>
                        <div className={classes.textContainer}>
                            <p>{localStorage.company}</p>

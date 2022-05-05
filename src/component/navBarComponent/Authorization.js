@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BaseButton from '../../button/BaseButton';
 import axios from 'axios';
-
+import firebase from '../../firebase';
+import 'firebaseui/dist/firebaseui.css';
+import { getAuth, RecaptchaVerifier } from "firebase/auth";
 function Authorization(props) {
     const [register, setRegister] = useState(() => {
         return {
@@ -22,6 +24,9 @@ function Authorization(props) {
         })
     };
 
+
+
+
     function submitChackin() {
         axios.post(`http://localhost:3001/login?login=${register.login}&password=${register.password}`)
         .then((resp) => {
@@ -39,22 +44,24 @@ function Authorization(props) {
                 localStorage.setItem('company', resp.data.userInfo.company);
                 localStorage.setItem('role', resp.data.userInfo.role);
                 props.userSet();
-
+                window.location.reload();
             }
         }).catch((e) => {
             alert(e.message)
         });
     };
+
     return(
         <div className={classes.mainContainer}>
             <button className={classes.menuButton} onClick={() =>  props.state()}>=</button>
             <div className={classes.logInContainer}>
                 <h1>Войти</h1>
                 <div className={classes.inputContainer}>
-                <input placeholder='UserName' className={classes.myInput} type="name" id="login" name="login" value={register.login} onChange={changeInputRegister} />
+                <input placeholder='Login' className={classes.myInput} type="name" id="login" name="login" value={register.login} onChange={changeInputRegister} />
                 <input placeholder='Password' className={classes.myInput} type="password" id="password" name="password" value={register.password} onChange={changeInputRegister} />
                 </div>
                 <div className={classes.buttonContainer}>
+                    <label></label>
                     <BaseButton f={() => submitChackin()} goTo='#' type='reg' text="Войти" />
                     <BaseButton  goTo='#' type='reg' f={() => props.regSet()} text="Регистрация" />
                 </div>

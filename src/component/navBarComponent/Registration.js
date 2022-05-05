@@ -37,9 +37,9 @@ function Registration(props) {
             <div className={classes.logInContainer}>
                 <h1>Регистрация</h1>
                 <div className={classes.inputContainer}>
-                <input placeholder='UserName' className={classes.myInput} type="login" id="login" name="login" value={register.login} onChange={changeInputRegister} />
+                <input placeholder='Login' className={classes.myInput} type="login" id="login" name="login" value={register.login} onChange={changeInputRegister} />
                 <input placeholder='Password' className={classes.myInput} type="password" id="password" name="password" value={register.password} onChange={changeInputRegister} />
-                <input placeholder='Company' className={classes.myInput} type="text" id="company" name="company" value={register.company} onChange={changeInputRegister} />
+                <input placeholder='Компания' className={classes.myInput} type="text" id="company" name="company" value={register.company} onChange={changeInputRegister} />
                 </div>
                 <div className={classes.buttonContainer}>
                     <BaseButton f={submitChackin} goTo='#' type='reg' text="Зарегистрироваться" />

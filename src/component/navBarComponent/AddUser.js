@@ -26,6 +26,7 @@ function AddUser(props) {
         axios.post(`http://localhost:3001/registration/employee?login=${register.login}&password=${register.password}&companyName=${localStorage.company}`).then(() => {}).catch((e) => {
             alert(e.message)
         })
+        alert("Пользователь создан");
     };
 
     return (
@@ -50,7 +51,7 @@ function AddUser(props) {
                 </div>
                 <div className={classes.item2}>
                     <div className={classes.textContainer}>
-                        <p>Company: </p>
+                        <p>Компания: </p>
                     </div>
                     <div className={classes.textContainer}>
                         <p>{localStorage.company}</p>
