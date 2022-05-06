@@ -31,6 +31,9 @@ export default function BaseButton(props) {
                 window.location.reload();
                 localStorage.clear();
                 break;
+            case 'leave':
+                    navigate('/createConference');
+                break;
         }
     }
 }

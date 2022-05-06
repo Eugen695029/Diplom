@@ -351,8 +351,14 @@ app.post("/login", async function (req, res) {
   }
 });
 
+let timerId = setTimeout(async function tick() {
+  await prisma.advertisement.deleteMany({})
+  console.log('Clean')
+  timerId = setTimeout(tick, 604800000);
+},604800000);
+
 app.post('/profile', passport.authenticate('jwt', { session: false }), (req, res) => { res.status(200).send(req.user) });
 
 server.listen(PORT, () => {
   console.log('Server Started!', PORT)
-})
+});

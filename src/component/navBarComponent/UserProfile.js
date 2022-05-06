@@ -24,7 +24,6 @@ function UserProfile(props) {
     const addFavourites = () => { //Изменение стостояния понели настройки
         setFavourites(!favourites);
     };
-    console.log(localStorage.role);
     return(
         <div className={classes.mainContainer}>
             <button className={classes.menuButton} onClick={() =>  props.state()}>=</button>
@@ -51,13 +50,7 @@ function UserProfile(props) {
                             <p>Настройки профиля</p>
                         </div>
                     </div>
-                    <div className={classes.item}>
-                        <div className={classes.imgContainer3}>
-                        </div>
-                        <div onClick={() => addFavourites()} className={classes.textContainer}>
-                            <p>Избранное</p>
-                        </div>
-                    </div>
+
                 </div>
                 <div className={classes.buttonContainer}>
                     <BaseButton  goTo='#' type='exit' f={() => props.userSet()} text="Выйти"/>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import BaseButton from '../../button/BaseButton';
 import classes from '../NavBar.module.css';
-
+import { v4 } from 'uuid';
 
 function Registration(props) {
 
@@ -26,9 +26,13 @@ function Registration(props) {
     };
 
     function submitChackin() {
-        axios.post(`http://localhost:3001/registration/manager?login=${register.login}&password=${register.password}&companyName=${register.company}`).then(() => {props.regSet()}).catch((e) => {
-            alert(e.message)
-        })
+        let text = v4();
+        let test = prompt('Введите: '+text,'');
+        if(test==text){
+            axios.post(`http://localhost:3001/registration/manager?login=${register.login}&password=${register.password}&companyName=${register.company}`).then(() => {props.regSet()}).catch((e) => {
+                alert(e.message)
+            })
+        }
     };
 
     return (

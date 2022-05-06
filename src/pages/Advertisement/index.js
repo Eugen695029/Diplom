@@ -25,6 +25,7 @@ function Advertisement() {
         axios.post(`http://localhost:3001/advertisementAdd?title=${advertisement.title}&text=${advertisement.text}&companyName=${localStorage.company}`).catch((e) => {
             alert(e.message)
         })
+        alert('Объявление опублекованно');
     };
 
 

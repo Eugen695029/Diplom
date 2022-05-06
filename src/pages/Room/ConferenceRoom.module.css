@@ -1,6 +1,7 @@
 .containerMain{
     height: 100vh;
     display: flex;
+    padding-left: 60px;
 }
 
 .videContainer{

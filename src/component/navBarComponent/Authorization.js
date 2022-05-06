@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BaseButton from '../../button/BaseButton';
 import axios from 'axios';
-import firebase from '../../firebase';
-import 'firebaseui/dist/firebaseui.css';
-import { getAuth, RecaptchaVerifier } from "firebase/auth";
+import { v4 } from 'uuid';
 function Authorization(props) {
     const [register, setRegister] = useState(() => {
         return {
@@ -25,30 +23,28 @@ function Authorization(props) {
     };
 
 
-
-
     function submitChackin() {
-        axios.post(`http://localhost:3001/login?login=${register.login}&password=${register.password}`)
-        .then((resp) => {
-            console.log(resp);
-            //console.log("getted",resp.data.message, resp.status, register.login) 
-            if (resp.status == 200) {
-                localStorage.setItem('token', resp.data.token);
-                localStorage.setItem('login', register.login);
-                localStorage.setItem('password', register.password);
-                localStorage.setItem('firstName', resp.data.userInfo.firstName);
-                localStorage.setItem('name', resp.data.userInfo.name);
-                localStorage.setItem('midleName', resp.data.userInfo.midleName);
-                localStorage.setItem('phone', resp.data.userInfo.phone);
-                localStorage.setItem('date', resp.data.userInfo.date);
-                localStorage.setItem('company', resp.data.userInfo.company);
-                localStorage.setItem('role', resp.data.userInfo.role);
-                props.userSet();
-                window.location.reload();
-            }
-        }).catch((e) => {
-            alert(e.message)
-        });
+            axios.post(`http://localhost:3001/login?login=${register.login}&password=${register.password}`)
+            .then((resp) => {
+                //console.log("getted",resp.data.message, resp.status, register.login) 
+                if (resp.status == 200) {
+                    localStorage.setItem('token', resp.data.token);
+                    localStorage.setItem('login', register.login);
+                    localStorage.setItem('password', register.password);
+                    localStorage.setItem('firstName', resp.data.userInfo.firstName);
+                    localStorage.setItem('name', resp.data.userInfo.name);
+                    localStorage.setItem('midleName', resp.data.userInfo.midleName);
+                    localStorage.setItem('phone', resp.data.userInfo.phone);
+                    localStorage.setItem('date', resp.data.userInfo.date);
+                    localStorage.setItem('company', resp.data.userInfo.company);
+                    localStorage.setItem('role', resp.data.userInfo.role);
+                    props.userSet();
+                    window.location.reload();
+                }
+            }).catch((e) => {
+                alert(e.message)
+            });
+        
     };
 
     return(
@@ -61,7 +57,6 @@ function Authorization(props) {
                 <input placeholder='Password' className={classes.myInput} type="password" id="password" name="password" value={register.password} onChange={changeInputRegister} />
                 </div>
                 <div className={classes.buttonContainer}>
-                    <label></label>
                     <BaseButton f={() => submitChackin()} goTo='#' type='reg' text="Войти" />
                     <BaseButton  goTo='#' type='reg' f={() => props.regSet()} text="Регистрация" />
                 </div>

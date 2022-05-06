@@ -10,6 +10,8 @@ import phonePNG from '../../img/phone.png'
 import messengerPNG from '../../img/messenger.png'
 import socket from '../../socket';
 
+import BaseButton from '../../button/BaseButton.jsx'
+
 function layout(clientsNumber = 1) {
   const pairs = Array.from({ length: clientsNumber })
     .reduce((acc, next, index, arr) => {
@@ -80,7 +82,7 @@ export default function Room() {
             </div>
             <div className={classes.containerItem2}>
               <div>
-                <SpecialButton img={phonePNG} w="42px" h="42px" type="leave" />
+                <BaseButton text={'Выход'}  h="42px" type="leave" />
               </div>
               <div>
                 <SpecialButton viewChat={viewChat} img={messengerPNG} w="42px" h="42px" type="chat" />

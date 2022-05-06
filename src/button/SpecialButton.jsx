@@ -6,13 +6,10 @@ import classes from './SpecialButton.module.css';
 
 
 function Click(type,viewChat,visibility){
-    //const navigate = useNavigate();
+
     switch(type){
         case 'chat':
             viewChat(visibility);
-        break;
-        case 'leave':
-            //navigate('/conference');
         break;
     }
 }

@@ -6,13 +6,16 @@ import BaseButon from '../../button/BaseButton.jsx';
  export default function Index(props) {
     const [userMas,setUserMas] = useState([]);
     useEffect(() => {
-    axios.post(`http://localhost:3001/user?companyName=${localStorage.company}`)
-    .then((resp) => {
-      const allUsers = resp.data.userInfo;
-      setUserMas(allUsers);
-    }).catch((e) => {
-      alert(e.message)
-    });
+      if(localStorage.token){
+        axios.post(`http://localhost:3001/user?companyName=${localStorage.company}`)
+        .then((resp) => {
+          const allUsers = resp.data.userInfo;
+          setUserMas(allUsers);
+        }).catch((e) => {
+          alert(e.message)
+        });
+        
+      }
     }, [setUserMas]);
     
     function DeliteUser(id) {
