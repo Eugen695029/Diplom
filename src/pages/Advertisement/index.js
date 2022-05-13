@@ -34,12 +34,12 @@ function Advertisement() {
         <div className={classes.mainContainer}>
             <div className={classes.textContainer}>
                 <div className={classes.item}>
-                    <p>Title:</p>
+                    <p>Заголовок:</p>
                     <input className={classes.myInput} style={{width: '100px'}} type="text" id="title" name="title" value={advertisement.title} onChange={changeInputRegister} />
                 </div>
 
                 <div className={classes.item}>
-                    <p>Text:</p>
+                    <p>Текст:</p>
                     <input className={classes.myInput} style={{width: '400px'}} type="text" id="text" name="text" value={advertisement.text} onChange={changeInputRegister} />
                 </div>
 
