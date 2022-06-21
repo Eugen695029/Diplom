@@ -5,6 +5,7 @@ import {v4} from 'uuid';
 import BaseButon from '../../button/BaseButton.jsx';
  export default function Index(props) {
     const [userMas,setUserMas] = useState([]);
+    const [updateTable,setUpdateTable] = useState(0);
     useEffect(() => {
       if(localStorage.token){
         axios.post(`http://localhost:3001/user?companyName=${localStorage.company}`)
@@ -20,6 +21,7 @@ import BaseButon from '../../button/BaseButton.jsx';
     
     function DeliteUser(id) {
       axios.post(`http://localhost:3001/userDelete?id=${id}`)
+      window.location.reload(); 
     }
 
   const user = userMas.map((obj) => {return [<tr key={v4()}><td key={v4()}>{obj.firstName}</td><td key={v4()}>{obj.name}</td><td key={v4()}>{obj.midleName}</td><td key={v4()}>{obj.phone}</td>{localStorage.role == 1 ? <td><BaseButon f={() => DeliteUser(obj.id)} type={'reg'} w={'45px'} h={'45px'} text={'X'}/></td> : <div></div> }</tr>]});
@@ -29,7 +31,7 @@ import BaseButon from '../../button/BaseButton.jsx';
 
       <table className={classes.iksweb}>
         <thead>
-          <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Телефон</th> {localStorage.role == 1 ? <th>Delete</th> : <div></div> } </tr>
+          <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Телефон</th> {localStorage.role == 1 ? <th>Удалить</th> : <div></div> } </tr>
           {user}
         </thead>
       </table>

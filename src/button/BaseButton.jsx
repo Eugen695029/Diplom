@@ -32,7 +32,7 @@ export default function BaseButton(props) {
                 localStorage.clear();
                 break;
             case 'leave':
-                    navigate('/createConference');
+                    navigate('/');
                 break;
         }
     }

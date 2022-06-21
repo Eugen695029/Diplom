@@ -29,7 +29,8 @@ function Registration(props) {
         let text = v4();
         let test = prompt('Введите: '+text,'');
         if(test==text){
-            axios.post(`http://localhost:3001/registration/manager?login=${register.login}&password=${register.password}&companyName=${register.company}`).then(() => {props.regSet()}).catch((e) => {
+            axios.post(`http://localhost:3001/registration/manager?login=${register.login}&password=${register.password}&companyName=${register.company}`)
+            .then(() => {props.regSet()}).catch((e) => {
                 alert(e.message)
             })
         }

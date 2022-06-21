@@ -153,30 +153,44 @@ app.get('*', (req, res) => {
 
 app.post('/registration/manager', async (req, res) => {
 
-  const company = await prisma.company.create({ data: { name: req.query['companyName']} });
-
-  const getCompany = await prisma.company.findUnique({
+  const companyCatch = await prisma.company.findFirst({
     where: {
-      name: req.query['companyName'],
+      name: {
+        equals: req.query['companyName']
+      }
     }
-  })
-  
-  const userdata = {
-    login: req.query['login'],
-    password: req.query['password'],
-    companyId: getCompany.id,
-    roleId: 1,
-  }
-  
-  try {
+  });
+  if(!companyCatch){
+    const company = await prisma.company.create({ data: { name: req.query['companyName']} });
+
+    const getCompany = await prisma.company.findUnique({
+      where: {
+        name: req.query['companyName'],
+      }
+    })
     
-    const user = await prisma.user.create({ data: userdata });
-    return res.json(user)
-  } catch (e) {
-    console.log(userdata);
-    console.log(e.message)
+    const userdata = {
+      login: req.query['login'],
+      password: req.query['password'],
+      companyId: getCompany.id,
+      roleId: 1,
+    }
+    
+    try {
+      
+      const user = await prisma.user.create({ data: userdata });
+      return res.json(user)
+    } catch (e) {
+      console.log(userdata);
+      console.log(e.message)
+      return res.sendStatus(400)
+    }
+  }
+  else{
     return res.sendStatus(400)
   }
+
+
 });
 
 app.post('/registration/employee', async (req, res) => {

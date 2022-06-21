@@ -27,7 +27,9 @@ function SetingUser(props) {
     };
 
     function submitChackin() {
-        axios.post(`http://localhost:3001/update?login=${localStorage.login}&firstName=${update.firstName}&name=${update.name}&midleName=${update.midleName}&phone=${update.phone}&date=${update.date}`).then().catch((e) => {
+        axios.post(`http://localhost:3001/update?login=${localStorage.login}&firstName=${update.firstName}&name=${update.name}&midleName=${update.midleName}&phone=${update.phone}&date=${update.date}`)
+        .then()
+        .catch((e) => {
             alert(e.message)
         })
         alert("Выши данные обновлены");

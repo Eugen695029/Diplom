@@ -47,8 +47,7 @@ export default function Chat({ socket, username, room, visibility }) {
                                     <div className={classes.message_content}>
                                         <p>{messageContent.message}</p>
                                     </div>
-
-
+                                    
                                 </div>
                             );
                         })}
